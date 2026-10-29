@@ -1,0 +1,1225 @@
+/* ==========================================================================
+   Erin Maria Bobin — Web Portfolio Stylesheet
+   Design Philosophy: Minimalist Academic Portfolio (Inspired by Matt Chapman
+   & GitHub Jekyll Minimal Theme), elevated with modern responsiveness,
+   fluid typography, interactive filtering, and dedicated print styles for VTOP.
+   ========================================================================== */
+
+:root {
+  /* Color Palette — Clean Academic Light */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f6f8fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fcfdfd;
+  --border-color: #e1e4e8;
+  --border-subtle: #eaecef;
+  --text-primary: #24292f;
+  --text-secondary: #57606a;
+  --text-muted: #6e7781;
+  --accent: #0969da;
+  --accent-hover: #0349b4;
+  --accent-soft: rgba(9, 105, 218, 0.08);
+  --accent-border: rgba(9, 105, 218, 0.25);
+  --success: #1a7f37;
+  --success-bg: rgba(26, 127, 55, 0.1);
+  --tag-bg: #eff2f5;
+  --tag-text: #343a40;
+  --sidebar-width: 320px;
+  --content-max-width: 880px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-subtle: 0 1px 3px rgba(31, 35, 40, 0.06), 0 2px 8px rgba(31, 35, 40, 0.04);
+  --shadow-hover: 0 4px 16px rgba(31, 35, 40, 0.1);
+  --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --font-heading: "Segoe UI", -apple-system, BlinkMacSystemFont, "Noto Sans", sans-serif;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #161b22;
+  --bg-card-hover: #1c2128;
+  --border-color: #30363d;
+  --border-subtle: #21262d;
+  --text-primary: #f0f6fc;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --accent: #58a6ff;
+  --accent-hover: #79b8ff;
+  --accent-soft: rgba(88, 166, 255, 0.12);
+  --accent-border: rgba(88, 166, 255, 0.3);
+  --success: #3fb950;
+  --success-bg: rgba(63, 185, 80, 0.15);
+  --tag-bg: #21262d;
+  --tag-text: #c9d1d9;
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 30px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Layout Wrapper */
+.layout-wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ==========================================================================
+   LEFT SIDEBAR (Sticky on Desktop, matching Matt Chapman style)
+   ========================================================================== */
+.sidebar {
+  width: var(--sidebar-width);
+  padding: 45px 30px 40px 35px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  z-index: 10;
+  overflow-y: auto;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Avatar / Profile Graphic */
+.profile-avatar-container {
+  margin-bottom: 22px;
+  position: relative;
+  display: inline-block;
+}
+
+.profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0969da 0%, #00b4d8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  box-shadow: 0 4px 14px rgba(9, 105, 218, 0.25);
+  border: 3px solid var(--bg-primary);
+  outline: 2px solid var(--border-color);
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--success);
+  border: 3px solid var(--bg-primary);
+  title: "Active Student & Developer";
+}
+
+/* Profile Titles */
+.profile-name {
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.profile-name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.profile-tagline {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.profile-dept {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.profile-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+}
+
+.meta-pill.highlight {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+/* Sidebar Bio Summary */
+.sidebar-bio {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 18px;
+}
+
+/* Quick Navigation */
+.nav-heading {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.section-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.section-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.section-nav a .nav-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 18px;
+}
+
+.section-nav a:hover {
+  background-color: var(--bg-secondary);
+  color: var(--accent);
+}
+
+.section-nav a.active {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.section-nav a.active .nav-index {
+  color: var(--accent);
+}
+
+/* Sidebar Footer / Action Buttons */
+.sidebar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-sidebar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.btn-sidebar:hover {
+  background: var(--tag-bg);
+  border-color: var(--text-muted);
+}
+
+.btn-sidebar.primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.btn-sidebar.primary:hover {
+  background: var(--accent-hover);
+}
+
+.sidebar-tools {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.btn-tool {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 0.78rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.btn-tool:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+  background-color: var(--bg-secondary);
+}
+
+/* ==========================================================================
+   MAIN CONTENT AREA (Right Side)
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  max-width: var(--content-max-width);
+  padding: 45px 50px 80px 50px;
+  background: var(--bg-primary);
+}
+
+/* Top Banner Assessment Callout */
+.assessment-banner {
+  background: linear-gradient(135deg, rgba(9, 105, 218, 0.05) 0%, rgba(0, 180, 216, 0.08) 100%);
+  border: 1px solid var(--accent-border);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.assessment-banner-content h4 {
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.assessment-banner-content p {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.45;
+}
+
+.vtop-quick-print {
+  white-space: nowrap;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.vtop-quick-print:hover {
+  background: var(--accent-hover);
+}
+
+/* Typography & Section Structure */
+.section-wrapper {
+  margin-bottom: 55px;
+  scroll-margin-top: 30px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border-color);
+  position: relative;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* Standard Paragraphs & Typography */
+p {
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+p.lead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* Highlight Box */
+.highlight-box {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+
+.highlight-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Grid for Areas of Interest */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 20px 0 25px;
+}
+
+.interest-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+.interest-item:hover {
+  border-color: var(--accent-border);
+  background-color: var(--accent-soft);
+  transform: translateY(-1px);
+}
+
+.interest-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+}
+
+.interest-text {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+/* ==========================================================================
+   SECTION B: PROJECTS
+   ========================================================================== */
+.project-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.filter-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow-subtle);
+  transition: var(--transition);
+  position: relative;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(9, 105, 218, 0.4);
+}
+
+.project-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.project-category-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.project-achievement-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: var(--success-bg);
+  color: var(--success);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(26, 127, 55, 0.25);
+}
+
+/* Tech Badges / Shields (Matt Chapman Style) */
+.tech-badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0 16px;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 22px;
+  padding: 0 8px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 3px;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+}
+
+.tech-badge img {
+  height: 12px;
+  width: auto;
+}
+
+.project-description {
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.project-subhead {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 14px 0 6px;
+}
+
+.project-feature-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 14px;
+}
+
+.project-feature-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.55;
+  margin-bottom: 5px;
+}
+
+.project-feature-list li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.learning-callout {
+  background-color: var(--bg-secondary);
+  border-left: 3px solid var(--accent);
+  padding: 10px 14px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 14px 0;
+}
+
+.learning-callout strong {
+  color: var(--text-primary);
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.project-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.project-link-btn:hover {
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.project-link-btn.primary {
+  background-color: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.project-link-btn.primary:hover {
+  background-color: var(--accent-hover);
+}
+
+/* ==========================================================================
+   SECTION C: COURSES & WORKSHOPS
+   ========================================================================== */
+.courses-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.course-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 22px;
+  transition: var(--transition);
+}
+
+.course-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.course-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.course-focus-tag {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.course-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+  margin: 12px 0;
+}
+
+.course-topic-item {
+  background: var(--bg-secondary);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.83rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.course-topic-item::before {
+  content: "→";
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* Skills Roadmap Chips */
+.skills-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.skill-roadmap-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+}
+
+.skill-roadmap-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.skill-roadmap-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   SECTION D: PUBLICATIONS & WRITING ASSESSMENTS
+   ========================================================================== */
+.writing-showcase-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.writing-showcase-card:hover {
+  border-color: var(--accent-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.writing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.writing-title {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.writing-badge {
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+  white-space: nowrap;
+}
+
+.writing-badge.gold {
+  background-color: rgba(217, 119, 6, 0.12);
+  color: #b45309;
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+/* ==========================================================================
+   SECTION E: SHORT RESUME (Academic / CV Format)
+   ========================================================================== */
+.resume-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.resume-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+.resume-name {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.resume-sub {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.resume-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.resume-section-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 6px;
+  margin: 24px 0 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Resume Education Item */
+.resume-item {
+  margin-bottom: 16px;
+}
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.resume-item-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.resume-item-score {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.resume-item-subtitle {
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+/* Skills Matrix Table */
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.skills-table tr {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.skills-table td {
+  padding: 8px 10px;
+  font-size: 0.86rem;
+  vertical-align: top;
+}
+
+.skills-table td.skill-cat {
+  width: 28%;
+  font-weight: 700;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.skills-table td.skill-items {
+  color: var(--text-secondary);
+}
+
+/* Honors & Awards Grid */
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.award-item {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.award-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.award-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.35;
+}
+
+.award-context {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+/* Footer */
+.portfolio-footer {
+  margin-top: 60px;
+  padding-top: 25px;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   TOAST NOTIFICATION (Copy Link Feedback)
+   ========================================================================== */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #1f2328;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast-notice.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Tablets & Mobile)
+   ========================================================================== */
+@media screen and (max-width: 980px) {
+  .layout-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding: 30px 24px;
+  }
+
+  .main-content {
+    padding: 35px 24px 60px;
+  }
+
+  .sidebar-content {
+    align-items: flex-start;
+  }
+
+  .section-nav {
+    display: none; /* Hide sticky sidebar nav on mobile in favor of standard scrolling */
+  }
+
+  .assessment-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .project-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resume-container {
+    padding: 24px 18px;
+  }
+
+  .resume-contact-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .skills-table td.skill-cat {
+    width: 35%;
+  }
+}
+
+/* ==========================================================================
+   PRINT STYLES FOR VTOP ASSESSMENT PDF EXPORT
+   ========================================================================== */
+@media print {
+  /* Set clean black on white */
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
+  }
+
+  .layout-wrapper {
+    display: block !important;
+    max-width: 100% !important;
+  }
+
+  /* Hide interactive / non-printable UI */
+  .sidebar-actions,
+  .sidebar-tools,
+  .project-filter-bar,
+  .vtop-quick-print,
+  .assessment-banner,
+  .portfolio-footer,
+  .toast-notice,
+  .section-nav {
+    display: none !important;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: static !important;
+    border: none !important;
+    padding: 0 0 20pt 0 !important;
+    border-bottom: 2pt solid #333333 !important;
+    margin-bottom: 20pt !important;
+  }
+
+  .main-content {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .section-wrapper {
+    page-break-inside: avoid;
+    margin-bottom: 25pt !important;
+  }
+
+  .section-header {
+    border-bottom: 1.5pt solid #333333 !important;
+    margin-bottom: 14pt !important;
+  }
+
+  .project-card,
+  .course-card,
+  .writing-showcase-card,
+  .resume-container {
+    box-shadow: none !important;
+    border: 1pt solid #cccccc !important;
+    background: #ffffff !important;
+    page-break-inside: avoid;
+    margin-bottom: 14pt !important;
+  }
+
+  .resume-container {
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  /* Make links visible in print */
+  a {
+    color: #111111 !important;
+    text-decoration: underline !important;
+  }
+
+  .project-link-btn {
+    border: 1pt solid #888888 !important;
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* Page break rules */
+  #section-resume {
+    page-break-before: always;
+  }
+}

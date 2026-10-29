@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erin Maria Bobin | Academic Web Portfolio & Assessment</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Erin Maria Bobin — Web Portfolio">
+  <meta name="description" content="Web Portfolio and Academic Assessment of Erin Maria Bobin. First-year B.Tech Computer Science and Engineering (AI & Data Engineering) student at VIT Vellore (Reg: 26BDE0039).">
+  
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="layout-wrapper">
+    
+    <!-- ======================================================================
+         LEFT SIDEBAR (Inspired by Matt Chapman's Jekyll Minimal Layout)
+         ====================================================================== -->
+    <aside class="sidebar">
+      <div class="sidebar-content">
+        
+        <!-- Profile Monogram / Avatar -->
+        <div class="profile-avatar-container">
+          <div class="profile-avatar">EB</div>
+          <span class="status-indicator" title="Active Student & Builder"></span>
+        </div>
+
+        <h1 class="profile-name">
+          <a href="#section-intro">Erin Maria Bobin</a>
+        </h1>
+        
+        <div class="profile-tagline">B.Tech Computer Science & Engineering</div>
+        <div class="profile-dept">Specialisation in AI & Data Engineering<br><strong>Vellore Institute of Technology (VIT), Vellore</strong></div>
+
+        <div class="profile-badge-row">
+          <span class="meta-pill highlight">Reg: 26BDE0039</span>
+          <span class="meta-pill">Top 0.1% CS (ICSE)</span>
+          <span class="meta-pill">AWS Student Builder</span>
+        </div>
+
+        <p class="sidebar-bio">
+          First-year CSE student exploring AI, agentic systems, web development, and socially impactful software. Turning ideas into robust, user-centric prototypes.
+        </p>
+
+        <!-- Quick Section Navigation -->
+        <div class="nav-heading">Portfolio Sections</div>
+        <nav>
+          <ul class="section-nav">
+            <li>
+              <a href="#section-intro" class="active">
+                <span class="nav-index">a)</span>
+                <span>Introduction</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section-projects">
+                <span class="nav-index">b)</span>
+                <span>Important Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section-courses">
+                <span class="nav-index">c)</span>
+                <span>Courses & Workshops</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section-publications">
+                <span class="nav-index">d)</span>
+                <span>Writing & Publications</span>
+              </a>
+            </li>
+            <li>
+              <a href="#section-resume">
+                <span class="nav-index">e)</span>
+                <span>Short Resume</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+      </div>
+
+      <!-- Sidebar Bottom Actions -->
+      <div class="sidebar-actions">
+        <a href="https://github.com/erinbreaks" target="_blank" rel="noopener noreferrer" class="btn-sidebar primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          View GitHub (@erinbreaks)
+        </a>
+
+        <button type="button" class="btn-sidebar trigger-print" title="Format and export this web portfolio as a clean PDF for VTOP submission">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+            <path d="M6 14h12v8H6z"/>
+          </svg>
+          Print / Export PDF for VTOP
+        </button>
+
+        <div class="sidebar-tools">
+          <button type="button" class="btn-tool" id="theme-toggle-btn" title="Toggle Light / Dark Mode">
+            <span id="theme-icon">🌙</span>
+            <span id="theme-text">Dark Mode</span>
+          </button>
+          <button type="button" class="btn-tool" id="copy-link-btn" title="Copy website link for VTOP submission">
+            <span>🔗</span>
+            <span>Copy Link</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA (Sections a through e)
+         ====================================================================== -->
+    <main class="main-content">
+
+      <!-- Assessment Banner Callout -->
+      <div class="assessment-banner">
+        <div class="assessment-banner-content">
+          <h4>Academic Web Portfolio Assessment — VIT Vellore</h4>
+          <p>
+            Submitted in adherence to the 5-section evaluation rubric: (a) Portfolio Introduction, (b) Important Projects, (c) Courses & Workshops, (d) Writing & Editorial Showcase, and (e) Short Resume. Ready for live link submission and direct PDF print generation for VTOP.
+          </p>
+        </div>
+        <button type="button" class="vtop-quick-print trigger-print">🖨️ Export PDF</button>
+      </div>
+
+      <!-- ====================================================================
+           SECTION A: INTRODUCTION TO PORTFOLIO
+           ==================================================================== -->
+      <section id="section-intro" class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Section A</span>
+          <h2 class="section-title">Introduction to Portfolio</h2>
+          <div class="section-subtitle">Academic profile, learning philosophy, and areas of exploration</div>
+        </div>
+
+        <p class="lead">
+          I am a first-year Computer Science and Engineering student specialising in <strong>Artificial Intelligence and Data Engineering</strong> at <strong>Vellore Institute of Technology (VIT), Vellore</strong> (Registration Number: <code>26BDE0039</code>). I am passionate about exploring how computer science, emerging machine learning models, and intuitive software engineering can converge to solve tangible real-world problems and craft meaningful user experiences.
+        </p>
+
+        <p>
+          My technical journey encompasses core foundational programming in <strong>Python, Java, and C</strong>, modern web development, introductory machine learning architectures, and agentic AI-assisted application design. Through competitive hackathons, specialized technical workshops, and cross-functional team initiatives, I have focused on translating ideas into functional, interactive prototypes, collaborating under tight engineering constraints, and approaching problem-solving with empathy and analytical clarity.
+        </p>
+
+        <div class="highlight-box">
+          <h4>
+            <span>⚡</span>
+            <span>Campus Engagement & Leadership</span>
+          </h4>
+          <p style="margin: 0;">
+            I am an active member of the <strong>AWS Student Builder Group at VIT Vellore</strong>, contributing to both the <strong>Tech</strong> and <strong>Outreach</strong> domains. Beyond purely technical pursuits, my sustained background in student leadership (House & Cultural Captain), Model United Nations (MUN Best Delegate), competitive elocution, and publication editorial work has instilled strong competencies in research, structured argumentation, and cross-disciplinary collaboration.
+          </p>
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 700; margin: 24px 0 10px;">Primary Areas of Interest</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">
+          My current academic and project investigations center around the following domains:
+        </p>
+
+        <div class="interests-grid">
+          <div class="interest-item">
+            <span class="interest-icon">🤖</span>
+            <div class="interest-text">Artificial Intelligence & Machine Learning</div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🧠</span>
+            <div class="interest-text">AI-Powered Applications & Agentic Systems</div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">💻</span>
+            <div class="interest-text">Web Development & Software Engineering</div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">📊</span>
+            <div class="interest-text">Data Analysis & Data Engineering</div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🚀</span>
+            <div class="interest-text">Technology Management & Product Design</div>
+          </div>
+          <div class="interest-item">
+            <span class="interest-icon">🌍</span>
+            <div class="interest-text">Accessible & Socially Impactful Technology</div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           SECTION B: INTRODUCTION TO IMPORTANT PROJECTS
+           ==================================================================== -->
+      <section id="section-projects" class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Section B</span>
+          <h2 class="section-title">Introduction to Important Projects</h2>
+          <div class="section-subtitle">Showcase of technical prototypes, hackathon solutions, and independent engineering explorations</div>
+        </div>
+
+        <!-- Interactive Category Filter Bar -->
+        <div class="project-filter-bar">
+          <button type="button" class="filter-btn active" data-filter="all">All Projects (7)</button>
+          <button type="button" class="filter-btn" data-filter="ai-ml">AI & Machine Learning</button>
+          <button type="button" class="filter-btn" data-filter="web">Web Development</button>
+          <button type="button" class="filter-btn" data-filter="social">Social Impact & Health</button>
+          <button type="button" class="filter-btn" data-filter="python-iot">Python & IoT</button>
+        </div>
+
+        <!-- Project 1: SamjanSetu -->
+        <article class="project-card" data-categories="ai-ml web social">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">1. SamjanSetu — AI-Powered Classroom Accessibility</h3>
+            </div>
+            <span class="project-category-badge">Artificial Intelligence / Social Impact</span>
+          </div>
+
+          <div class="project-achievement-banner">
+            <span>🏆</span>
+            <span><strong>Achievement:</strong> Selected among Top 24 Teams out of 120 Teams in the Innovators Track</span>
+          </div>
+
+          <p class="project-description">
+            SamjanSetu is an AI-assisted inclusive classroom accessibility platform conceptualized and engineered to help deaf and hard-of-hearing students participate seamlessly and equitably in real-time academic lectures. The system bridges critical communication divides between teachers and differently-abled students through multimodal accessible learning interfaces.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white" alt="Next.js"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Agentic_AI-FF6F00?style=flat&logo=openai&logoColor=white" alt="AI Agents"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Vercel-000000?style=flat&logo=vercel&logoColor=white" alt="Vercel"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Accessibility-0052CC?style=flat" alt="Accessibility"></span>
+          </div>
+
+          <div class="project-subhead">Key Features and Architectural Objectives:</div>
+          <ul class="project-feature-list">
+            <li><strong>Real-Time Classroom Transcription:</strong> Converts live spoken educator speech into accessible, synchronized text streams.</li>
+            <li><strong>Indian Sign Language (ISL) Avatar Synthesis:</strong> Explores translation of audio content into animated ISL gestures via an interactive avatar.</li>
+            <li><strong>Automated Flashcard Generation:</strong> Leverages natural language processing to extract core lecture concepts into active recall flashcards for post-class revision.</li>
+            <li><strong>Universal Classroom Inclusion:</strong> Eliminates pedagogical barriers for students requiring assistive hearing technologies.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>Key Engineering Learning:</strong> Introduced me to human-centered design for assistive technology, handling real-time multimodal inputs, designing high-contrast accessible user flows, and pitching a working prototype under competitive hackathon judging criteria.
+          </div>
+
+          <div class="project-links">
+            <a href="https://samjan-setu.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-link-btn primary">
+              <span>🚀</span>
+              <span>View Live Website (Vercel)</span>
+            </a>
+            <a href="https://github.com/erinbreaks/samjan-setu" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>View GitHub Repository</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2: EntryX -->
+        <article class="project-card" data-categories="web">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">2. EntryX — Event Ticketing & QR Check-In Verification System</h3>
+            </div>
+            <span class="project-category-badge">Web Development / Full-Stack</span>
+          </div>
+
+          <p class="project-description">
+            EntryX is an end-to-end event ticketing and attendee management web application built to streamline collegiate and commercial event registrations, ticketing pipelines, and physical gate admissions through cryptographic QR codes.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JavaScript"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white" alt="Node.js"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/QR_Verification-005571?style=flat" alt="QR"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Email_Service-EA4335?style=flat&logo=gmail&logoColor=white" alt="Email"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/HTML5%2FCSS3-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5"></span>
+          </div>
+
+          <div class="project-subhead">Key Features & Technical Implementations:</div>
+          <ul class="project-feature-list">
+            <li><strong>Dynamic Event Administration:</strong> Organizers can publish custom events with seat capacity limits, tiers, and pricing schedules.</li>
+            <li><strong>Automated Dispatch Engine:</strong> Instant generation and email dispatch of secure ticket PDFs carrying unique participant tokens.</li>
+            <li><strong>Optical QR Scanner & Fallback Entry:</strong> High-speed gate check-in via camera feed scanning, alongside manual token entry for degraded network conditions.</li>
+            <li><strong>Duplicate Check-In Safeguard:</strong> Real-time state verification preventing ticket replay attacks or reuse of duplicate passes.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>Key Engineering Learning:</strong> Deepened practical competence in stateful web application design, transactional integrity during ticket purchase, asynchronous email dispatch pipelines, client-side video stream processing, and defensive validation against concurrent check-ins.
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/erinbreaks/entryx" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>View GitHub Repository</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: Iris Flower Classification -->
+        <article class="project-card" data-categories="ai-ml">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">3. Iris Flower Classification</h3>
+            </div>
+            <span class="project-category-badge">Machine Learning / Data Science</span>
+          </div>
+
+          <p class="project-description">
+            A foundational machine learning classification study implementing end-to-end supervised learning workflows. The model processes morphological floral dimensions (sepal length, sepal width, petal length, and petal width) to accurately predict taxonomic species categories.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Scikit--Learn-F7931E?style=flat&logo=scikit-learn&logoColor=white" alt="Scikit-Learn"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white" alt="Pandas"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/NumPy-013243?style=flat&logo=numpy&logoColor=white" alt="NumPy"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Matplotlib-11557c?style=flat" alt="Matplotlib"></span>
+          </div>
+
+          <div class="project-subhead">Key Learning Objectives & Methods:</div>
+          <ul class="project-feature-list">
+            <li><strong>Exploratory Data Analysis:</strong> Statistical profiling, distribution visualization, and feature correlation matrices.</li>
+            <li><strong>Feature Engineering & Boundary Mapping:</strong> Analyzing mathematical separation among Setosa, Versicolor, and Virginica classes.</li>
+            <li><strong>Model Training & Validation:</strong> Evaluating classifier algorithms, baseline splitting, and confusion matrix diagnostics.</li>
+            <li><strong>Inference Pipeline:</strong> Structured prediction function taking raw geometric attributes to return class probability distributions.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>Key Engineering Learning:</strong> Provided fundamental rigor in understanding tabular dataset preprocessing, avoiding data leakage during train/test splits, model evaluation metrics (precision, recall, F1), and interpreting decision boundaries.
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/erinbreaks/iris-flower-classification" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>View GitHub Repository</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 4: MediCycle -->
+        <article class="project-card" data-categories="social web">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">4. MediCycle — Responsible Medicine Reuse & Redistribution Concept</h3>
+            </div>
+            <span class="project-category-badge">Healthcare / Social Impact</span>
+          </div>
+
+          <p class="project-description">
+            MediCycle is a healthcare innovation platform concept designed to tackle critical pharmaceutical wastage while extending medical access to underprivileged communities. It establishes a controlled, verified circular redistribution network connecting patient donors, certified pharmacists, NGOs, and low-income beneficiaries.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black" alt="React"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Healthcare_Compliance-2E7D32?style=flat" alt="Health"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Leaflet_Maps-199900?style=flat&logo=leaflet&logoColor=white" alt="Leaflet"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/UI%2FUX_Design-FF61F6?style=flat" alt="UI/UX"></span>
+          </div>
+
+          <div class="project-subhead">System Concept & Safety Principles:</div>
+          <ul class="project-feature-list">
+            <li><strong>Verified Donation Pipeline:</strong> Reallocating unexpired, sealed surplus prescription medications from households to certified relief dispensaries.</li>
+            <li><strong>Pharmacist-in-the-Loop Verification:</strong> Mandatory clinical audit stage requiring authorized personnel to inspect blister integrity, expiry, and storage conditions.</li>
+            <li><strong>Community Trust Architecture:</strong> Strict ethical and legal compliance guarding against the circulation of scheduled drugs or damaged packaging.</li>
+            <li><strong>Geo-Dispensary Directory:</strong> Connecting donors with authorized collection hubs and drop-off points.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>Key Engineering Learning:</strong> Challenged me to balance technical convenience against stringent healthcare regulations, patient safety liabilities, user privacy, and building trust in community-driven redistribution systems.
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/erinbreaks/MediCycleCelestia" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>View GitHub Repository</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 5: Cyberbrew -->
+        <article class="project-card" data-categories="web">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">5. Cyberbrew — Immersive Digital Café Experience</h3>
+            </div>
+            <span class="project-category-badge">Web Development / UI Design</span>
+          </div>
+
+          <p class="project-description">
+            Cyberbrew is an atmospheric web application centered around the philosophy <em>"The full café ritual, right at your desk."</em> It translates the warmth, soundscape, and sensory aesthetics of artisan coffee houses into an engaging digital desktop sanctuary for programmers, writers, and students.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white" alt="HTML5"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/CSS3_Modern-1572B6?style=flat&logo=css3&logoColor=white" alt="CSS3"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black" alt="JS"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Responsive_UX-7952B3?style=flat" alt="UX"></span>
+          </div>
+
+          <div class="project-subhead">Design Objectives & Creative Elements:</div>
+          <ul class="project-feature-list">
+            <li><strong>Aesthetic Visual Identity:</strong> Warm artisanal color scheme, custom typography, and fluid micro-interactions.</li>
+            <li><strong>Interactive Ritual Elements:</strong> Thoughtfully crafted layouts replicating coffee brewing stages to encourage mindful study pauses.</li>
+            <li><strong>Responsive Ergonomics:</strong> Flawlessly tuned viewports ensuring frictionless access across mobile screens, tablets, and wide monitors.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>Key Engineering Learning:</strong> Emphasized front-end design mastery, mastering CSS variable systems, visual hierarchy, layout harmony, and crafting high-empathy emotional design in software.
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/erinbreaks/cyberbrew" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>View GitHub Repository</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 6: VIT Student Marketplace -->
+        <article class="project-card" data-categories="python-iot">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">6. VIT Student Marketplace — Campus Trading & Rental System</h3>
+            </div>
+            <span class="project-category-badge">Python Programming / Systems</span>
+          </div>
+
+          <p class="project-description">
+            A comprehensive Python-based software application engineered to streamline the buying, selling, searching, and renting of second-hand essentials within the VIT student ecosystem. It optimizes the lifecycle of academic textbooks, lab equipment, electronics, and hostel essentials.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Python_3-3776AB?style=flat&logo=python&logoColor=white" alt="Python"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/File_I%2FO-CSV_Engine-informational" alt="CSV Engine"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Data_Structures-Lists%20%26%20Dicts-blueviolet" alt="Data Structures"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Search%20%26%20Filter-Algorithmic-orange" alt="Search"></span>
+          </div>
+
+          <div class="project-subhead">Key Program Features & Implementation:</div>
+          <ul class="project-feature-list">
+            <li><strong>Robust Listing Engine:</strong> Add, edit, and categorize items with metadata including price, item condition, category, and seller contacts.</li>
+            <li><strong>Keyword Search & Multi-Criteria Filtering:</strong> Fast indexing across listings by keyword matching and category filters.</li>
+            <li><strong>Wishlist & Availability State Machine:</strong> Mark items as reserved, rented, sold, or active across multiple user sessions.</li>
+            <li><strong>Persistent File I/O Serialization:</strong> Seamless persistence through structured CSV read/write pipelines, preventing data loss across program restarts.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>Key Engineering Learning:</strong> Solidified foundational software engineering principles in Python: modular function architecture, dictionary/list manipulation, error handling for corrupted records, and building reliable data storage mechanisms without heavyweight database dependencies.
+          </div>
+        </article>
+
+        <!-- Project 7: Smart Medicine Safety Box -->
+        <article class="project-card" data-categories="social python-iot">
+          <div class="project-header-top">
+            <div>
+              <h3 class="project-title">7. Smart Medicine Safety Box (Multidisciplinary Project — MDP)</h3>
+            </div>
+            <span class="project-category-badge">Multidisciplinary Project / IoT</span>
+          </div>
+
+          <div class="project-achievement-banner" style="background-color: var(--accent-soft); color: var(--accent); border-color: var(--accent-border);">
+            <span>🔄</span>
+            <span><strong>Status:</strong> Active Engineering Project in Progress</span>
+          </div>
+
+          <p class="project-description">
+            The Smart Medicine Safety Box is an ongoing Multidisciplinary Engineering Project (MDP) at VIT Vellore focused on improving pharmaceutical organization, dosage adherence, and storage safety for geriatric and chronically ill patients. Working with reference architectures, the team is developing an intelligent, sensor-monitored hardware enclosure.
+          </p>
+
+          <div class="tech-badges-row">
+            <span class="tech-badge"><img src="https://img.shields.io/badge/IoT-Hardware_Sensors-informational" alt="IoT"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Embedded_Systems-Prototyping-brightgreen" alt="Embedded"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Budget_Optimized-%3C%E2%82%B93%2C000-important" alt="Budget"></span>
+            <span class="tech-badge"><img src="https://img.shields.io/badge/Healthcare_Tech-Safety-blue" alt="Health"></span>
+          </div>
+
+          <div class="project-subhead">Project Objectives & Engineering Constraints:</div>
+          <ul class="project-feature-list">
+            <li><strong>Targeted Engineering Budget:</strong> Strict cost ceiling of under ₹3,000 to ensure broad socioeconomic feasibility and mass deployability.</li>
+            <li><strong>Compartmentalized Safety Mechanisms:</strong> Designing timed access, dosage alert triggers, and environmental sensing (temperature/humidity).</li>
+            <li><strong>Team MDP Collaboration:</strong> Synchronizing mechanical enclosure requirements with circuit schematics and embedded firmware.</li>
+          </ul>
+
+          <div class="learning-callout">
+            <strong>My Learning Goals:</strong> Gaining practical immersion in multidisciplinary collaboration, hardware component selection, BOM (Bill of Materials) budgeting, IoT sensor integration, and navigating from theoretical problem statements to physical hardware prototypes.
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/garodiaa/carebox-IoT-project" target="_blank" rel="noopener noreferrer" class="project-link-btn">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              <span>View Reference Architecture (CareBox IoT)</span>
+            </a>
+          </div>
+        </article>
+      </section>
+
+
+      <!-- ====================================================================
+           SECTION C: IMPORTANT CLASSES ATTENDED / COURSES
+           ==================================================================== -->
+      <section id="section-courses" class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Section C</span>
+          <h2 class="section-title">Important Classes Attended & Technical Courses</h2>
+          <div class="section-subtitle">Formal workshops, specialized agentic training, hackathon-based intensives, and independent learning</div>
+        </div>
+
+        <div class="courses-container">
+          
+          <!-- Workshop 1 -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3 class="course-title">1. Data Alchemy 4.0</h3>
+              <span class="course-focus-tag">Agentic AI & Multi-Agent Systems</span>
+            </div>
+            <p style="font-size: 0.9rem; margin-bottom: 10px;">
+              A hands-on, high-intensity technical workshop exploring cutting-edge paradigms in agentic artificial intelligence, autonomous tool invocation, and multi-agent coordination beyond conventional text-in text-out language models.
+            </p>
+            <div class="course-topics-grid">
+              <div class="course-topic-item">Agentic Workflow Architectures & Reasoning Loops</div>
+              <div class="course-topic-item">Deterministic Tool Calling & API Function Interfacing</div>
+              <div class="course-topic-item">Short-Term & Long-Term Context Memory Systems</div>
+              <div class="course-topic-item">Multi-Agent Task Delegation & State Orchestration</div>
+            </div>
+            <div class="learning-callout" style="margin-bottom: 0;">
+              <strong>Key Learning Outcome:</strong> Built a clear architectural understanding of how modern generative AI models evolve into active problem solvers capable of executing multi-step computational tasks, managing persistent context, and operating real-world software tools.
+            </div>
+          </div>
+
+          <!-- Workshop 2 -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3 class="course-title">2. Celestia 2.0</h3>
+              <span class="course-focus-tag">Prompt Engineering & 24-Hour Hackathon</span>
+            </div>
+            <p style="font-size: 0.9rem; margin-bottom: 10px;">
+              A comprehensive program comprising a dedicated Prompt Engineering Masterclass followed by a competitive 24-hour rapid prototyping hackathon across multidisciplinary tracks.
+            </p>
+            <div class="course-topics-grid">
+              <div class="course-topic-item">Prompt Engineering & Structured Context Injection</div>
+              <div class="course-topic-item">Developer Tools & Open Innovation</div>
+              <div class="course-topic-item">UN Sustainable Development Goals (SDGs)</div>
+              <div class="course-topic-item">Educational Technology (EdTech) & Healthcare</div>
+            </div>
+            <div class="learning-callout" style="margin-bottom: 0;">
+              <strong>Key Learning Outcome:</strong> Sharpened rapid conceptualization, systematic prompt iteration for reproducible outputs, team collaboration under strict time limits, and deploying prototype web applications on cloud platforms.
+            </div>
+          </div>
+
+          <!-- Workshop 3 -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3 class="course-title">3. Hackathons & Project-Based Engineering</h3>
+              <span class="course-focus-tag">Practical Collaborative Execution</span>
+            </div>
+            <p style="font-size: 0.9rem; margin-bottom: 10px;">
+              Direct participation in competitive collegiate hackathons and builder initiatives including SamjanSetu (Top 24 Innovators Track finalist) and Celestia 2.0.
+            </p>
+            <div class="course-topics-grid">
+              <div class="course-topic-item">Deconstructing ambiguous problem statements into modular tasks</div>
+              <div class="course-topic-item">Leveraging AI-assisted development environments for rapid iteration</div>
+              <div class="course-topic-item">Version control (Git/GitHub) in multi-contributor repositories</div>
+              <div class="course-topic-item">Balancing architectural ambition with hackathon delivery deadlines</div>
+            </div>
+          </div>
+
+          <!-- Roadmap -->
+          <div class="course-card">
+            <div class="course-header">
+              <h3 class="course-title">4. Ongoing Independent Learning Roadmap</h3>
+              <span class="course-focus-tag">Continuous Self-Directed Study</span>
+            </div>
+            <p style="font-size: 0.9rem; margin-bottom: 8px;">
+              In addition to formal classroom instruction and workshops, I maintain a continuous, documented learning routine across core engineering competencies:
+            </p>
+            <div class="skills-roadmap-grid">
+              <div class="skill-roadmap-card">
+                <div class="skill-roadmap-title">🐍 Python & Data Structures</div>
+                <div class="skill-roadmap-desc">Object-oriented programming, file systems, algorithmic problem solving.</div>
+              </div>
+              <div class="skill-roadmap-card">
+                <div class="skill-roadmap-title">☕ Java & C Fundamentals</div>
+                <div class="skill-roadmap-desc">Memory management, pointers, class hierarchies, procedural foundations.</div>
+              </div>
+              <div class="skill-roadmap-card">
+                <div class="skill-roadmap-title">🌐 Modern Web Engineering</div>
+                <div class="skill-roadmap-desc">HTML5, semantic markup, reactive UI flows, REST API integration.</div>
+              </div>
+              <div class="skill-roadmap-card">
+                <div class="skill-roadmap-title">📈 Applied Machine Learning</div>
+                <div class="skill-roadmap-desc">Supervised classification, Scikit-learn, exploratory data analysis with Pandas.</div>
+              </div>
+              <div class="skill-roadmap-card">
+                <div class="skill-roadmap-title">🤖 Prompting & AI Systems</div>
+                <div class="skill-roadmap-desc">System prompting, agentic tool schemas, LLM-augmented application workflows.</div>
+              </div>
+              <div class="skill-roadmap-card">
+                <div class="skill-roadmap-title">☁️ Cloud & DevOps Exposure</div>
+                <div class="skill-roadmap-desc">AWS Student Builder Group technical modules, Git version control, Vercel CI/CD.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           SECTION D: PUBLICATIONS & WRITING ASSESSMENTS
+           ==================================================================== -->
+      <section id="section-publications" class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Section D</span>
+          <h2 class="section-title">Publications & Writing Assessments</h2>
+          <div class="section-subtitle">Showcase of technical writing, editorial journalism, debate diplomacy, and communication skills</div>
+        </div>
+
+        <p class="lead" style="font-size: 0.95rem; margin-bottom: 22px;">
+          Strong engineering must be paired with clear, articulate communication. This section highlights my documented experiences in editorial journalism, formal executive interviews, diplomatic argumentation, and competitive public speaking.
+        </p>
+
+        <!-- Writing Assessment 1: IAS Interview -->
+        <article class="writing-showcase-card">
+          <div class="writing-header">
+            <div>
+              <h3 class="writing-title">1. Student Editorial Board & Executive Interview Writing</h3>
+              <div style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 2px;">
+                <strong>Role:</strong> Student Editorial Board Member
+              </div>
+            </div>
+            <span class="writing-badge">Editorial & Journalism</span>
+          </div>
+
+          <p style="font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px;">
+            As an active member of the Student Editorial Board, I contributed to official publication curation, feature articles, and formal interviews. A significant milestone was conducting and synthesizing a formal written interview with renowned <strong>IAS Officer T. V. Anupama</strong>.
+          </p>
+
+          <div class="project-subhead" style="margin-top: 10px;">Key Competencies & Written Deliverables:</div>
+          <ul class="project-feature-list">
+            <li><strong>Subject Research & Query Structuring:</strong> Formulating insightful, contextually relevant interview questionnaires balancing policy, public governance, and administrative leadership.</li>
+            <li><strong>Professional Executive Communication:</strong> Engaging with a senior civil servant with decorum, active listening, and precision.</li>
+            <li><strong>Editorial Synthesis & Narrative Flow:</strong> Condensing in-depth dialogue into an impactful, reader-focused long-form publication piece.</li>
+            <li><strong>Proofreading & Publication Governance:</strong> Ensuring rigorous grammatical fidelity, tone consistency, and journalistic accuracy.</li>
+          </ul>
+        </article>
+
+        <!-- Writing Assessment 2: MUN -->
+        <article class="writing-showcase-card">
+          <div class="writing-header">
+            <div>
+              <h3 class="writing-title">2. Model United Nations (MUN) — Diplomatic & Policy Writing</h3>
+              <div style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 2px;">
+                <strong>Recognition:</strong> Best Delegate — Kerala Chapter
+              </div>
+            </div>
+            <span class="writing-badge gold">🏅 Best Delegate Award</span>
+          </div>
+
+          <p style="font-size: 0.92rem; line-height: 1.6; margin-bottom: 12px;">
+            Participation in competitive Model United Nations conferences served as a masterclass in structured political research, evidence-based position paper writing, and high-stakes multilateral consensus building. Winning the <strong>Best Delegate</strong> title in the Kerala chapter reflects sustained excellence in debate and writing.
+          </p>
+
+          <div class="project-subhead" style="margin-top: 10px;">Writing & Persuasion Skills Honed:</div>
+          <ul class="project-feature-list">
+            <li><strong>Position Paper Formulation:</strong> Drafting concise, country-aligned policy papers under strict UN documentation standards.</li>
+            <li><strong>Draft Resolution Architecture:</strong> Authoring operative clauses, preambles, and multilateral compromise frameworks.</li>
+            <li><strong>Impromptu Speech & Argument Structuring:</strong> Articulating complex geopolitical positions clearly before large assemblies.</li>
+          </ul>
+        </article>
+
+        <!-- Note on Academic Publications -->
+        <div class="highlight-box">
+          <h4>
+            <span>📝</span>
+            <span>Statement on Formal Academic Publications</span>
+          </h4>
+          <p style="font-size: 0.88rem; margin: 0; color: var(--text-secondary); line-height: 1.55;">
+            As a first-year undergraduate student, I do not currently list peer-reviewed journal papers. Instead, this section highlights my proven foundation in formal written discourse, interview journalism, elocution (State & Regional Champion), and research methodologies, which will directly underpin my upcoming academic research publications in Artificial Intelligence and Data Engineering.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           SECTION E: SHORT RESUME
+           ==================================================================== -->
+      <section id="section-resume" class="section-wrapper">
+        <div class="section-header">
+          <span class="section-label">Section E</span>
+          <h2 class="section-title">Curriculum Vitae / Short Resume</h2>
+          <div class="section-subtitle">Academic record, technical profile, leadership, and honors</div>
+        </div>
+
+        <div class="resume-container">
+          
+          <!-- Resume Top Header -->
+          <div class="resume-header">
+            <h1 class="resume-name">Erin Maria Bobin</h1>
+            <div class="resume-sub">Computer Science and Engineering — AI & Data Engineering</div>
+            <div class="resume-contact-row">
+              <span>📍 VIT Vellore, Tamil Nadu, India</span>
+              <span>🎓 Reg No: <strong>26BDE0039</strong></span>
+              <span>💻 <a href="https://github.com/erinbreaks" target="_blank" rel="noopener noreferrer">github.com/erinbreaks</a></span>
+            </div>
+          </div>
+
+          <!-- Career Objective -->
+          <div class="resume-section-title">Career Objective</div>
+          <p style="font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px;">
+            To construct a formidable academic and practical foundation in computer science, artificial intelligence, and software engineering, while deploying technical skills to resolve tangible societal challenges. Aiming to engineer intuitive, user-focused digital solutions, collaborate proactively in multidisciplinary teams, and continuously explore the frontiers where intelligent systems intersect with scalable software architecture and management.
+          </p>
+
+          <!-- Education -->
+          <div class="resume-section-title">Education</div>
+          
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Vellore Institute of Technology (VIT), Vellore</span>
+              <span class="resume-item-score">Currently Pursuing (2026 Batch)</span>
+            </div>
+            <div class="resume-item-subtitle">B.Tech in Computer Science and Engineering — Specialisation in AI & Data Engineering</div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Indian Certificate of Secondary Education (ICSE)</span>
+              <span class="resume-item-score">Score: 98.6%</span>
+            </div>
+            <div class="resume-item-subtitle">Recognised among the <strong>Top 0.1% nationally</strong> in Computer Science</div>
+          </div>
+
+          <div class="resume-item">
+            <div class="resume-item-header">
+              <span class="resume-item-title">Indian School Certificate (ISC)</span>
+              <span class="resume-item-score">Score: 97.25%</span>
+            </div>
+            <div class="resume-item-subtitle">High academic distinction across science and computing disciplines</div>
+          </div>
+
+          <!-- Technical Skills -->
+          <div class="resume-section-title">Technical Skills & Competencies</div>
+          <table class="skills-table">
+            <tbody>
+              <tr>
+                <td class="skill-cat">Programming</td>
+                <td class="skill-items"><strong>Python, Java, C</strong> (Procedural & Object-Oriented paradigms)</td>
+              </tr>
+              <tr>
+                <td class="skill-cat">Web Technologies</td>
+                <td class="skill-items">HTML5, CSS3, JavaScript, Responsive Web Architecture, Vercel, Next.js basics</td>
+              </tr>
+              <tr>
+                <td class="skill-cat">AI & Machine Learning</td>
+                <td class="skill-items">Supervised Classification, Scikit-Learn, Prompt Engineering, Agentic AI, Multi-Agent Coordination</td>
+              </tr>
+              <tr>
+                <td class="skill-cat">Data Handling</td>
+                <td class="skill-items">CSV file I/O operations, Pandas, NumPy, data parsing, structured data storage</td>
+              </tr>
+              <tr>
+                <td class="skill-cat">Tools & Platforms</td>
+                <td class="skill-items">Git & GitHub, GNU Octave, Visual Studio Code, AI developer tooling</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Positions of Responsibility -->
+          <div class="resume-section-title">Positions of Responsibility & Leadership</div>
+          <ul class="project-feature-list" style="margin-top: 10px;">
+            <li><strong>AWS Student Builder Group, VIT Vellore:</strong> Active member of Tech and Outreach domains; organizing developer initiatives and technical workshops.</li>
+            <li><strong>Student Editorial Board:</strong> Lead interviewer and publication writer; conducted interview with IAS officer T. V. Anupama.</li>
+            <li><strong>House Captain & Cultural Captain:</strong> Led school student body across major events; fostered inter-house collaboration, talent scouting, and team coordination.</li>
+            <li><strong>Anchoring & Master of Ceremonies:</strong> Official host for marquee institutional functions including the School Annual Day and Panache Cultural Conclave.</li>
+          </ul>
+
+          <!-- Projects Summary -->
+          <div class="resume-section-title">Key Projects Summary</div>
+          <ul class="project-feature-list" style="margin-top: 10px;">
+            <li><strong>SamjanSetu:</strong> AI-powered classroom accessibility platform for deaf and hard-of-hearing students. <em>Top 24 out of 120 teams in Innovators Track.</em></li>
+            <li><strong>EntryX:</strong> Full-stack event ticketing web application with QR-code gate scanning and duplicate check-in prevention.</li>
+            <li><strong>Iris Flower Classification:</strong> Classical machine learning classifier predicting species from geometric floral features using Scikit-Learn.</li>
+            <li><strong>MediCycle:</strong> Conceptual circular medicine redistribution network pairing verified clinics with donors.</li>
+            <li><strong>Cyberbrew:</strong> Aesthetic digital café desktop companion and soundscape interface.</li>
+            <li><strong>VIT Student Marketplace:</strong> Python application for campus item trading and renting with CSV persistence.</li>
+            <li><strong>Smart Medicine Safety Box:</strong> Active Multidisciplinary Project (MDP) prototyping a sensor-driven, budget-optimized medicine organizer.</li>
+          </ul>
+
+          <!-- Achievements & Awards -->
+          <div class="resume-section-title">Achievements & Honors</div>
+          
+          <div style="font-size: 0.86rem; font-weight: 700; color: var(--accent); margin: 12px 0 6px;">Academic & Olympiad Distinctions:</div>
+          <div class="awards-grid">
+            <div class="award-item">
+              <span class="award-icon">🥉</span>
+              <div>
+                <div class="award-name">International Rank 3</div>
+                <div class="award-context">International English Olympiad (IEO)</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🥇</span>
+              <div>
+                <div class="award-name">Regional Rank 1 (3x)</div>
+                <div class="award-context">ASISC Scholarship Examination (Won 3 times)</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🌟</span>
+              <div>
+                <div class="award-name">Top 0.1% Nationally</div>
+                <div class="award-context">Computer Science in ICSE Board Examinations</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🏅</span>
+              <div>
+                <div class="award-name">Zonal Ranks 5 & 12</div>
+                <div class="award-context">International Mathematics Olympiad (IMO)</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">💻</span>
+              <div>
+                <div class="award-name">Zonal Rank 9 (2x)</div>
+                <div class="award-context">National Cyber Olympiad (NCO, won twice)</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">📖</span>
+              <div>
+                <div class="award-name">State Rank 16</div>
+                <div class="award-context">National Spell Bee Examination</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.86rem; font-weight: 700; color: var(--accent); margin: 18px 0 6px;">Public Speaking, Debate & Cultural Distinctions:</div>
+          <div class="awards-grid">
+            <div class="award-item">
+              <span class="award-icon">🏆</span>
+              <div>
+                <div class="award-name">Best Delegate</div>
+                <div class="award-context">Model United Nations (MUN) Conference — Kerala Chapter</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🥇</span>
+              <div>
+                <div class="award-name">First Place</div>
+                <div class="award-context">All Kerala Inter-School English Elocution Competition</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🥉</span>
+              <div>
+                <div class="award-name">Third Prize</div>
+                <div class="award-context">English Recitation, Zonal ASISC Cultural Fest</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🥈</span>
+              <div>
+                <div class="award-name">Second Prize</div>
+                <div class="award-context">One Act Play, Regional ASISC Cultural Competition</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size: 0.86rem; font-weight: 700; color: var(--accent); margin: 18px 0 6px;">Athletic & Sports Distinctions:</div>
+          <div class="awards-grid">
+            <div class="award-item">
+              <span class="award-icon">♟️</span>
+              <div>
+                <div class="award-name">State 2nd Place (Chess)</div>
+                <div class="award-context">CISCE National Sports and Games (2019 & 2022)</div>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-icon">🏊‍♀️</span>
+              <div>
+                <div class="award-name">Zonal 2nd Position (Swimming)</div>
+                <div class="award-context">50m & 100m Freestyle, CISCE National Sports 2022</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Key Strengths -->
+          <div class="resume-section-title">Core Strengths & Interests</div>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 6px;">
+            <strong>Strengths:</strong> Technical research & structured analysis, public speaking & presentation, collaborative multidisciplinary leadership, creative prototype design, quick adaptability to emerging tech stacks.
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-secondary); margin: 0;">
+            <strong>Interests:</strong> Artificial intelligence & agentic systems, accessible technology, web software architecture, technological management, public diplomacy, literature, competitive chess.
+          </p>
+
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PORTFOLIO FOOTER
+           ==================================================================== -->
+      <footer class="portfolio-footer">
+        <div>
+          <strong>Erin Maria Bobin</strong> • B.Tech CSE (AI & Data Engineering) • VIT Vellore (Reg: <code>26BDE0039</code>)
+        </div>
+        <div class="footer-links">
+          <a href="#section-intro">Back to Top ↑</a>
+          <a href="https://github.com/erinbreaks" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="javascript:void(0)" class="trigger-print">Export as PDF</a>
+        </div>
+      </footer>
+
+    </main>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
