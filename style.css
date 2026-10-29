@@ -122,6 +122,25 @@ body {
   display: inline-block;
 }
 
+.profile-avatar-img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--bg-primary);
+  outline: 2px solid var(--border-color);
+  box-shadow: 0 4px 16px rgba(9, 105, 218, 0.2);
+  display: block;
+  transition: var(--transition);
+}
+
+.profile-avatar-img:hover {
+  outline-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(9, 105, 218, 0.35);
+  transform: scale(1.02);
+}
+
 .profile-avatar {
   width: 110px;
   height: 110px;
@@ -1173,6 +1192,14 @@ p.lead {
     padding: 0 0 20pt 0 !important;
     border-bottom: 2pt solid #333333 !important;
     margin-bottom: 20pt !important;
+  }
+
+  .profile-avatar-img {
+    width: 80pt !important;
+    height: 80pt !important;
+    border: 1.5pt solid #333333 !important;
+    box-shadow: none !important;
+    margin-bottom: 10pt !important;
   }
 
   .main-content {
