@@ -4,6 +4,7 @@
 > **Branch & Specialisation:** B.Tech — Computer Science and Engineering (AI & Data Engineering)  
 > **Institution:** Vellore Institute of Technology (VIT), Vellore  
 > **GitHub:** [https://github.com/erinbreaks](https://github.com/erinbreaks)  
+> **Email:** [erinbobin@gmail.com](mailto:erinbobin@gmail.com)  
 > **Design Inspiration:** Inspired by [Matt Chapman's GitHub Portfolio](https://mattschapman.github.io/) (Academic Minimalist Jekyll Style) with elevated modern responsiveness, dynamic filtering, and print-ready formatting.
 
 ---

@@ -201,6 +201,35 @@ body {
   margin-bottom: 12px;
 }
 
+.sidebar-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  font-family: var(--font-mono);
+}
+
+.sidebar-contact-link svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.sidebar-contact-link:hover {
+  color: var(--accent);
+}
+
 .profile-badge-row {
   display: flex;
   flex-wrap: wrap;
