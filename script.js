@@ -1,6 +1,7 @@
 /* ==========================================================================
    Erin Maria Bobin — Web Portfolio Client Interactivity
    Features:
+   - React Bits WebGL2 Interactive Particles Background
    - Dynamic Project Categorization Filter
    - ScrollSpy Active Section Indicator
    - Theme Toggle (Light / Dark) with LocalStorage
@@ -8,8 +9,11 @@
    - Copy Link to Clipboard with Toast Notification
    ========================================================================== */
 
+let particlesController = null;
+
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
+  initParticlesEffect();
   initProjectFilter();
   initScrollSpy();
   initActionButtons();
@@ -41,8 +45,52 @@ function initTheme() {
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('portfolio-theme', newTheme);
       updateThemeButton(newTheme);
+
+      if (particlesController) {
+        const isDarkTheme = newTheme === 'dark';
+        particlesController.updateOptions({
+          particleColors: isDarkTheme 
+            ? ['#58a6ff', '#79b8ff', '#38bdf8', '#ffffff'] 
+            : ['#0969da', '#0284c7', '#0369a1', '#64748b'],
+          glow: isDarkTheme ? 0.6 : 0.4,
+          opacity: isDarkTheme ? 0.95 : 0.8
+        });
+      }
     });
   }
+}
+
+/* ==========================================================================
+   2. React Bits: WebGL2 Interactive Particles Background
+   ========================================================================== */
+function initParticlesEffect() {
+  const container = document.getElementById('particles-background');
+  if (!container || typeof window.initParticles !== 'function') return;
+
+  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+  const isDark = currentTheme === 'dark';
+
+  particlesController = window.initParticles(container, {
+    particleCount: 220,
+    particleSpread: 12,
+    speed: 0.12,
+    particleColors: isDark 
+      ? ['#58a6ff', '#79b8ff', '#38bdf8', '#ffffff'] 
+      : ['#0969da', '#0284c7', '#0369a1', '#64748b'],
+    particleBaseSize: 95,
+    sizeRandomness: 0.95,
+    cameraDistance: 20,
+    glow: isDark ? 0.6 : 0.4,
+    twinkle: 0.35,
+    alphaParticles: true,
+    moveParticlesOnHover: true,
+    hoverEffect: 'parallax',
+    particleHoverFactor: 1.2,
+    hoverRadius: 150,
+    clickBurst: true,
+    drift: 'none',
+    opacity: isDark ? 0.95 : 0.8
+  });
 }
 
 function updateThemeButton(theme) {

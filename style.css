@@ -7,7 +7,9 @@
 
 :root {
   /* Color Palette — Clean Academic Light */
-  --bg-primary: #ffffff;
+  --bg-canvas: #f8fafc;
+  --bg-primary: rgba(255, 255, 255, 0.90);
+  --bg-surface: rgba(255, 255, 255, 0.82);
   --bg-secondary: #f6f8fa;
   --bg-card: #ffffff;
   --bg-card-hover: #fcfdfd;
@@ -39,7 +41,9 @@
 
 /* Dark Theme */
 [data-theme="dark"] {
-  --bg-primary: #0d1117;
+  --bg-canvas: #090d13;
+  --bg-primary: rgba(13, 17, 23, 0.90);
+  --bg-surface: rgba(13, 17, 23, 0.84);
   --bg-secondary: #161b22;
   --bg-card: #161b22;
   --bg-card-hover: #1c2128;
@@ -75,12 +79,14 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-canvas);
   color: var(--text-primary);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.25s ease, color 0.25s ease;
+  position: relative;
+  min-height: 100vh;
 }
 
 /* Layout Wrapper */
@@ -90,6 +96,7 @@ body {
   display: flex;
   min-height: 100vh;
   position: relative;
+  z-index: 1;
 }
 
 /* ==========================================================================
@@ -106,6 +113,8 @@ body {
   justify-content: space-between;
   border-right: 1px solid var(--border-color);
   background: var(--bg-primary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 10;
   overflow-y: auto;
 }
@@ -392,13 +401,44 @@ body {
 }
 
 /* ==========================================================================
+   REACT BITS: PARTICLES WEBGL2 COMPONENT
+   ========================================================================== */
+.particles-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.particles-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#particles-background {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ==========================================================================
    MAIN CONTENT AREA (Right Side)
    ========================================================================== */
 .main-content {
   flex: 1;
   max-width: var(--content-max-width);
   padding: 45px 50px 80px 50px;
-  background: var(--bg-primary);
+  background: var(--bg-surface);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
 }
 
 /* Top Banner Assessment Callout */
@@ -1202,6 +1242,8 @@ p.lead {
   }
 
   /* Hide interactive / non-printable UI */
+  #particles-background,
+  .particles-container,
   .sidebar-actions,
   .sidebar-tools,
   .project-filter-bar,
