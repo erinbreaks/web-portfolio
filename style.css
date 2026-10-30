@@ -5,63 +5,64 @@
    fluid typography, interactive filtering, and dedicated print styles for VTOP.
    ========================================================================== */
 
-:root {
-  /* Color Palette — Clean Academic Light */
-  --bg-canvas: #f8fafc;
-  --bg-primary: rgba(255, 255, 255, 0.90);
-  --bg-surface: rgba(255, 255, 255, 0.82);
-  --bg-secondary: #f6f8fa;
-  --bg-card: #ffffff;
-  --bg-card-hover: #fcfdfd;
-  --border-color: #e1e4e8;
-  --border-subtle: #eaecef;
-  --text-primary: #24292f;
-  --text-secondary: #57606a;
-  --text-muted: #6e7781;
-  --accent: #0969da;
-  --accent-hover: #0349b4;
-  --accent-soft: rgba(9, 105, 218, 0.08);
-  --accent-border: rgba(9, 105, 218, 0.25);
-  --success: #1a7f37;
-  --success-bg: rgba(26, 127, 55, 0.1);
-  --tag-bg: #eff2f5;
-  --tag-text: #343a40;
+:root,
+[data-theme="dark"] {
+  /* Color Palette — Deep Midnight Space & Glass (High Contrast for White Particles) */
+  --bg-canvas: #07090e;
+  --bg-primary: rgba(11, 15, 25, 0.75);
+  --bg-surface: transparent;
+  --bg-secondary: rgba(18, 24, 38, 0.65);
+  --bg-card: rgba(15, 23, 42, 0.68);
+  --bg-card-hover: rgba(23, 34, 56, 0.82);
+  --border-color: rgba(255, 255, 255, 0.12);
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --accent-border: rgba(56, 189, 248, 0.35);
+  --success: #34d399;
+  --success-bg: rgba(52, 211, 153, 0.15);
+  --tag-bg: rgba(30, 41, 59, 0.75);
+  --tag-text: #cbd5e1;
   --sidebar-width: 320px;
   --content-max-width: 880px;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --shadow-subtle: 0 1px 3px rgba(31, 35, 40, 0.06), 0 2px 8px rgba(31, 35, 40, 0.04);
-  --shadow-hover: 0 4px 16px rgba(31, 35, 40, 0.1);
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
   --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --font-heading: "Segoe UI", -apple-system, BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
-/* Dark Theme */
-[data-theme="dark"] {
-  --bg-canvas: #090d13;
-  --bg-primary: rgba(13, 17, 23, 0.90);
-  --bg-surface: rgba(13, 17, 23, 0.84);
-  --bg-secondary: #161b22;
-  --bg-card: #161b22;
-  --bg-card-hover: #1c2128;
-  --border-color: #30363d;
-  --border-subtle: #21262d;
-  --text-primary: #f0f6fc;
-  --text-secondary: #8b949e;
-  --text-muted: #6e7681;
-  --accent: #58a6ff;
-  --accent-hover: #79b8ff;
-  --accent-soft: rgba(88, 166, 255, 0.12);
-  --accent-border: rgba(88, 166, 255, 0.3);
-  --success: #3fb950;
-  --success-bg: rgba(63, 185, 80, 0.15);
-  --tag-bg: #21262d;
-  --tag-text: #c9d1d9;
-  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 4px 18px rgba(0, 0, 0, 0.45);
+/* Light Theme */
+[data-theme="light"] {
+  --bg-canvas: #0f172a;
+  --bg-primary: rgba(30, 41, 59, 0.78);
+  --bg-surface: transparent;
+  --bg-secondary: rgba(51, 65, 85, 0.65);
+  --bg-card: rgba(30, 41, 59, 0.72);
+  --bg-card-hover: rgba(51, 65, 85, 0.85);
+  --border-color: rgba(255, 255, 255, 0.15);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --accent-soft: rgba(56, 189, 248, 0.18);
+  --accent-border: rgba(56, 189, 248, 0.4);
+  --success: #34d399;
+  --success-bg: rgba(52, 211, 153, 0.15);
+  --tag-bg: rgba(51, 65, 85, 0.7);
+  --tag-text: #e2e8f0;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.4);
+  --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 /* Base Resets */
@@ -434,9 +435,7 @@ body {
   flex: 1;
   max-width: var(--content-max-width);
   padding: 45px 50px 80px 50px;
-  background: var(--bg-surface);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
   position: relative;
   z-index: 2;
 }
@@ -541,6 +540,8 @@ p.lead {
 /* Highlight Box */
 .highlight-box {
   background-color: var(--bg-secondary);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 18px 22px;
@@ -567,6 +568,8 @@ p.lead {
 
 .interest-item {
   background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   padding: 12px 14px;
@@ -631,6 +634,8 @@ p.lead {
 
 .project-card {
   background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 24px;
@@ -820,6 +825,8 @@ p.lead {
 
 .course-card {
   background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 22px;
@@ -912,6 +919,8 @@ p.lead {
    ========================================================================== */
 .writing-showcase-card {
   background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   padding: 24px;
@@ -961,6 +970,8 @@ p.lead {
    ========================================================================== */
 .resume-container {
   background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 36px 40px;

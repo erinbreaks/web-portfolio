@@ -282,6 +282,88 @@ void main() {
   const easeOut = t => 1 - Math.pow(1 - clamp(t, 0, 1), 3);
   const wrap = (value, span) => ((value % span) + span) % span;
 
+  function init2DFallback(canvas, container, opts) {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return null;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const count = 160;
+    const particles = [];
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 2.8 + 1.2,
+        dx: (Math.random() - 0.5) * 0.4,
+        dy: (Math.random() - 0.5) * 0.4,
+        alpha: Math.random() * 0.65 + 0.35,
+        twinkleSpeed: Math.random() * 0.02 + 0.01,
+        twinklePhase: Math.random() * Math.PI * 2
+      });
+    }
+
+    let mouseX = width / 2;
+    let mouseY = height / 2;
+    let animId = null;
+
+    const onPointerMove = e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+    window.addEventListener('pointermove', onPointerMove, { passive: true });
+
+    const onResize = () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    };
+    window.addEventListener('resize', onResize);
+
+    function loop() {
+      ctx.clearRect(0, 0, width, height);
+      for (let i = 0; i < count; i++) {
+        const p = particles[i];
+        p.x += p.dx;
+        p.y += p.dy;
+        p.twinklePhase += p.twinkleSpeed;
+
+        if (p.x < 0) p.x = width;
+        else if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        else if (p.y > height) p.y = 0;
+
+        const dist = Math.hypot(p.x - mouseX, p.y - mouseY);
+        let shiftX = 0;
+        let shiftY = 0;
+        if (dist < 160) {
+          const factor = (160 - dist) / 160;
+          shiftX = (p.x - mouseX) * factor * 0.18;
+          shiftY = (p.y - mouseY) * factor * 0.18;
+        }
+
+        const currentAlpha = p.alpha * (0.6 + 0.4 * Math.sin(p.twinklePhase));
+        ctx.beginPath();
+        ctx.arc(p.x + shiftX, p.y + shiftY, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${currentAlpha})`;
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+        ctx.shadowBlur = 10;
+        ctx.fill();
+      }
+      animId = requestAnimationFrame(loop);
+    }
+    animId = requestAnimationFrame(loop);
+
+    return {
+      updateOptions() {},
+      destroy() {
+        if (animId) cancelAnimationFrame(animId);
+        window.removeEventListener('pointermove', onPointerMove);
+        window.removeEventListener('resize', onResize);
+      }
+    };
+  }
+
   function initParticles(container, userOptions) {
     if (!container) return null;
 
@@ -302,13 +384,16 @@ void main() {
     });
 
     if (!gl) {
-      console.warn('WebGL2 not supported on this browser; particles canvas inactive.');
-      return null;
+      console.warn('WebGL2 not supported on this browser; activating 2D canvas fallback.');
+      return init2DFallback(canvas, container, userOptions);
     }
 
     const dots = link(gl, PARTICLE_VERTEX, PARTICLE_FRAGMENT);
     const lines = link(gl, LINE_VERTEX, LINE_FRAGMENT);
-    if (!dots || !lines) return null;
+    if (!dots || !lines) {
+      console.warn('WebGL2 shader compile error; activating 2D canvas fallback.');
+      return init2DFallback(canvas, container, userOptions);
+    }
 
     const corners = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, corners);
@@ -379,33 +464,33 @@ void main() {
     let settings = sanitizeSettings(userOptions);
 
     function sanitizeSettings(opts = {}) {
-      const p = (Array.isArray(opts.particleColors) ? opts.particleColors : [opts.particleColors || '#0969da']).filter(Boolean).map(String);
+      const p = (Array.isArray(opts.particleColors) ? opts.particleColors : [opts.particleColors || '#ffffff']).filter(Boolean).map(String);
       return {
-        count: clamp(Math.round(opts.particleCount ?? 180), 1, MAX_COUNT),
-        spread: Math.max(0.1, opts.particleSpread ?? 10),
-        speed: opts.speed ?? 0.1,
-        colors: p.length ? p : ['#0969da'],
+        count: clamp(Math.round(opts.particleCount ?? 260), 1, MAX_COUNT),
+        spread: Math.max(0.1, opts.particleSpread ?? 12),
+        speed: opts.speed ?? 0.15,
+        colors: p.length ? p : ['#ffffff'],
         mouse: opts.moveParticlesOnHover ?? true,
-        hoverFactor: Math.max(0, opts.particleHoverFactor ?? 1),
+        hoverFactor: Math.max(0, opts.particleHoverFactor ?? 1.2),
         soft: opts.alphaParticles ?? false,
-        size: Math.max(0, opts.particleBaseSize ?? 100),
-        randomness: Math.max(0, opts.sizeRandomness ?? 1),
+        size: Math.max(0, opts.particleBaseSize ?? 130),
+        randomness: Math.max(0, opts.sizeRandomness ?? 0.85),
         camera: Math.max(1, opts.cameraDistance ?? 20),
         rotate: !(opts.disableRotation ?? false),
         dpr: opts.pixelRatio,
         shape: SHAPES[opts.shape] ?? 0,
-        glow: Math.max(0, opts.glow ?? 0.5),
-        twinkle: clamp(opts.twinkle ?? 0.3, 0, 1),
+        glow: Math.max(0, opts.glow ?? 0.85),
+        twinkle: clamp(opts.twinkle ?? 0.45, 0, 1),
         depthOfField: Math.max(0, opts.depthOfField ?? 0),
         connections: opts.connections ?? false,
         connectionDistance: Math.max(10, opts.connectionDistance ?? 110),
         hoverEffect: EFFECTS[opts.hoverEffect] ?? 0,
-        hoverRadius: Math.max(20, opts.hoverRadius ?? 140),
+        hoverRadius: Math.max(20, opts.hoverRadius ?? 160),
         clickBurst: opts.clickBurst ?? true,
         drift: DRIFTS[opts.drift] ?? 0,
         driftSpeed: opts.driftSpeed ?? 1,
         variation: Math.max(0, Math.round(opts.variation ?? 0)),
-        intro: opts.intro ?? true,
+        intro: opts.intro ?? false,
         opacity: clamp(opts.opacity ?? 1, 0, 1),
         lightMode: opts.lightMode ?? false,
         paused: opts.paused ?? false
@@ -752,8 +837,8 @@ void main() {
 
     const resize = () => {
       const s = settings;
-      const width = Math.max(1, container.clientWidth);
-      const height = Math.max(1, container.clientHeight);
+      const width = Math.max(1, container.clientWidth || window.innerWidth);
+      const height = Math.max(1, container.clientHeight || window.innerHeight);
       const ratio = Math.min(s.dpr || window.devicePixelRatio || 1, 2);
       view.width = width;
       view.height = height;

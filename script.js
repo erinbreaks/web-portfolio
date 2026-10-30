@@ -25,35 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
 function initTheme() {
   const themeToggleBtn = document.getElementById('theme-toggle-btn');
   const savedTheme = localStorage.getItem('portfolio-theme');
-  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeButton(savedTheme);
-  } else if (prefersDark) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    updateThemeButton('dark');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    updateThemeButton('light');
-  }
+  // Default to Dark Theme so the glowing white particles shine with high contrast
+  const initialTheme = savedTheme || 'dark';
+  document.documentElement.setAttribute('data-theme', initialTheme);
+  updateThemeButton(initialTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('portfolio-theme', newTheme);
       updateThemeButton(newTheme);
 
       if (particlesController) {
-        const isDarkTheme = newTheme === 'dark';
         particlesController.updateOptions({
-          particleColors: isDarkTheme 
-            ? ['#58a6ff', '#79b8ff', '#38bdf8', '#ffffff'] 
-            : ['#0969da', '#0284c7', '#0369a1', '#64748b'],
-          glow: isDarkTheme ? 0.6 : 0.4,
-          opacity: isDarkTheme ? 0.95 : 0.8
+          particleColors: ['#ffffff', '#ffffff', '#ffffff', '#f8fafc'],
+          glow: 0.85,
+          opacity: 1
         });
       }
     });
@@ -67,29 +57,25 @@ function initParticlesEffect() {
   const container = document.getElementById('particles-background');
   if (!container || typeof window.initParticles !== 'function') return;
 
-  const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-  const isDark = currentTheme === 'dark';
-
   particlesController = window.initParticles(container, {
-    particleCount: 220,
+    particleCount: 260,
     particleSpread: 12,
-    speed: 0.12,
-    particleColors: isDark 
-      ? ['#58a6ff', '#79b8ff', '#38bdf8', '#ffffff'] 
-      : ['#0969da', '#0284c7', '#0369a1', '#64748b'],
-    particleBaseSize: 95,
-    sizeRandomness: 0.95,
+    speed: 0.15,
+    particleColors: ['#ffffff', '#ffffff', '#ffffff', '#f8fafc'],
+    particleBaseSize: 130,
+    sizeRandomness: 0.85,
     cameraDistance: 20,
-    glow: isDark ? 0.6 : 0.4,
-    twinkle: 0.35,
-    alphaParticles: true,
+    glow: 0.85,
+    twinkle: 0.45,
+    alphaParticles: false,
     moveParticlesOnHover: true,
     hoverEffect: 'parallax',
     particleHoverFactor: 1.2,
-    hoverRadius: 150,
+    hoverRadius: 160,
     clickBurst: true,
     drift: 'none',
-    opacity: isDark ? 0.95 : 0.8
+    intro: false,
+    opacity: 1
   });
 }
 
